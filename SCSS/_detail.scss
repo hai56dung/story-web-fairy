@@ -1,0 +1,118 @@
+.detail-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 0 40px;
+  background: linear-gradient(-45deg, rgba($gray, 0.8) 10%, rgba($gray, 0.01)) 90%, url("https://firebasestorage.googleapis.com/v0/b/fairytalesci65.appspot.com/o/icons%2Fcloud-bg.svg?alt=media&token=29e6719e-517c-47b7-a980-dfea57740e51") no-repeat center / cover;
+  padding-bottom: 60px;
+  @include maxWidth(1366px) {
+    grid-template-columns: 1fr;
+  }
+}
+.detail-right {
+  max-height: 100vh;
+  overflow-y: scroll;
+  @include hideScroll();
+  padding-top: 20px;
+  @include maxWidth(1366px) {
+    height: auto;
+    padding-top: 20px;
+  }
+}
+.detail {
+  &-title-wrapper {
+    @include flex(flex-start, space-between);
+    margin-bottom: 20px;
+  }
+  &-title {
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  &-title-wrapper .detail-btn-wrapper {
+    margin-left: auto;
+  }
+  &-date {
+    font-size: 14px;
+  }
+  &-date > span {
+    @include dotSeparate("left");
+  }
+  &-desc > p {
+    text-align: justify;
+  }
+  &-author-wrapper {
+    display: flex;
+    margin-bottom: 40px;
+  }
+  &-author-wrapper .detail-author-name {
+    margin-left: 10px;
+  }
+  &-author-image {
+    @include size(60px);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &-author-name {
+    margin-top: 10px;
+    color: $gray-lighter;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  &-rating {
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: $primary-color;
+    background-color: rgba($primary-color, 0.1);
+    border: 1px solid transparent;
+    font-weight: 600;
+  }
+  &-rating > i {
+    margin-right: 5px;
+  }
+  &-rating:hover {
+    border: 1px solid $primary-color;
+    & > i {
+      font-weight: bold;
+    }
+  }
+  &-rating.active {
+    border: 1px solid $primary-color;
+    & > i {
+      font-weight: bold;
+    }
+  }
+  &-category {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -10px;
+    margin-bottom: 20px;
+  }
+  &-category-item {
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: $secondary-color;
+    background-color: rgba($secondary-color, 0.1);
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  &-avg {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  &-avg-heading {
+    @include dotSeparate("right", currentColor, 4px);
+  }
+  &-avg .avg-num {
+    font-weight: bold;
+  }
+  &-avg .checked {
+    color: $primary-color;
+  }
+  &-avg-heart i {
+    margin-right: 2px;
+  }
+}

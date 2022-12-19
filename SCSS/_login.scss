@@ -1,0 +1,162 @@
+.form {
+  width: 60%;
+  background-color: $gray-darker;
+  padding: 50px;
+  border-radius: 15px;
+
+  @include flex(stretch, center);
+  gap: 40px;
+  position: relative;
+
+  &-title {
+    order: -1;
+    padding-bottom: 30px;
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+  }
+  &-group {
+    padding-bottom: 20px;
+    padding-left: 10px;
+  }
+  &-group label {
+    display: inline-block;
+    color: $gray-light;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    width: 100%;
+  }
+  &-group input {
+    background-color: transparent;
+    padding: 10px 5px;
+    display: block;
+    width: 100%;
+    color: $gray;
+    border-bottom: 2px solid $primary-color;
+    color: $gray-lighter;
+  }
+  &-group textarea {
+    overflow: auto;
+    padding: 2px;
+    display: block;
+    width: 100%;
+    background-color: $gray-darkest;
+    color: $gray-light;
+    font-size: 14px;
+    border: 2px solid $primary-color;
+    border-radius: 4px;
+    resize: none;
+  }
+  &-group input:focus::placeholder {
+    color: transparent;
+  }
+  &-btn {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 300px;
+    font-family: $primary-font;
+  }
+  &-wrap {
+    width: 40%;
+    @include flex(stretch, space-between, column);
+  }
+  &-fill {
+    width: 55%;
+    @include flex(stretch, space-evenly, column);
+  }
+  &-fill p {
+    color: $gray-lighter;
+    font-size: 16px;
+    text-align: center;
+  }
+  &-link {
+    color: $secondary-color;
+  }
+  &-img {
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  &-caption {
+    width: 100%;
+    padding-bottom: 20px;
+    line-height: 1.4;
+  }
+  &-error {
+    color: red;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 14px;
+    height: 10px;
+  }
+}
+@include maxWidth(1366px) {
+  .form {
+    width: 70%;
+    flex-direction: column;
+  }
+  .form-wrap {
+    width: auto;
+  }
+  .form-wrap img {
+    display: none;
+  }
+  .form-fill {
+    width: auto;
+  }
+  .form-group input::placeholder {
+    color: transparent;
+  }
+  .form-title {
+    padding-bottom: 50px;
+  }
+}
+@include maxWidth(767px) {
+  .form {
+    width: 100%;
+    padding: 20px;
+  }
+  .form-title {
+    font-size: 24px;
+    padding-bottom: 30px;
+  }
+  .form-caption {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-size: 26px;
+    text-align: center;
+  }
+}
+.modal {
+  @include absoluteFull();
+  position: fixed;
+  z-index: 1000;
+
+  @include flex(center, center);
+  padding: 20px;
+  @include gradient($primary-color, $secondary-color, 0.2, 0.2);
+  &-close {
+    @include flex(center, center);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    @include size(40px);
+    font-size: 30px;
+    border-radius: 10rem;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+  }
+}
+#modalAddStory .form-group {
+  padding-bottom: 10px;
+}
+#modalAddStory .form-group label{
+  color: $gray-light;
+  font-size: 14px;
+}
+

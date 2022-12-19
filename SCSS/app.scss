@@ -1,0 +1,18 @@
+// Git bash
+//  sass SCSS/app.scss CSS/app.css --watch
+
+@import "variables";
+@import "mixin";
+@import "reset";
+@import "base";
+@import "typo";
+@import "login";
+@import "header";
+@import "category";
+@import "main";
+@import "profile";
+@import "show";
+@import "detail";
+@import "rating";
+@import "comment";
+@import "admin";
